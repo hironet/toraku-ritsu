@@ -1,3 +1,11 @@
+<?php
+const CALC_NUM_MIN = 1;
+const CALC_NUM_MAX = 10;
+const CALC_NUM_DEFALUT = 5;
+$calc_num = isset($_GET['calc-num']) ? $_GET['calc-num'] : CALC_NUM_DEFALUT;
+$calc_num = $calc_num > CALC_NUM_MAX ? CALC_NUM_MAX : $calc_num;
+$calc_num = $calc_num < CALC_NUM_MIN ? CALC_NUM_MIN : $calc_num;
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -18,7 +26,18 @@
 </head>
 <body>
   <h1>騰落率計算ツール</h1>
-  <form id="calc-form" onsubmit="return false;">
+  <form id="calc-form" action="index.php" method="GET">
+    <div class="d-flex flex-row my-2">
+      <div>
+        <button class="btn btn-outline-danger text-nowrap mx-3" type="reset">リセット</button>
+      </div>
+      <div>
+        <div class="input-group">
+          <input type="text" class="form-control" name="calc-num" placeholder="行数を入力して下さい" aria-describedby="calc-num-btn">
+          <button id="calc-num-btn" class="btn btn-outline-primary" type="submit">変更</button>
+        </div>
+      </div>
+    </div><!-- d-flex -->
     <div class="table-responsive">
       <table class="table table-striped table-bordered align-middle col156-align">
         <thead>
@@ -32,8 +51,8 @@
           </tr>
         </thead>
         <tbody>
-<?php for ($i = 1; $i <= 10; $i++) { ?>
-          <tr>
+<?php for ($i = 1; $i <= $calc_num; $i++) { ?>
+          <tr class="text-nowrap">
             <td><?= $i ?></td>
             <td>
               <input class="form-control" type="text">
@@ -69,7 +88,7 @@
       let before_price;
       let after_price;
       document.getElementById('calc-form').addEventListener('input', function(e) {
-<?php for ($i = 1; $i <= 10; $i++) { ?>
+<?php for ($i = 1; $i <= $calc_num; $i++) { ?>
         before_price = Number(document.getElementById('before_price_<?= $i ?>').value);
         after_price = Number(document.getElementById('after_price_<?= $i ?>').value);
         if (before_price > 0 && after_price > 0) {
