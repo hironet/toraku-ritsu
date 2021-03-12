@@ -18,19 +18,19 @@
 </head>
 <body>
   <h1>騰落率計算ツール</h1>
-  <div class="table-responsive">
-    <form onsubmit="return false;" oninput="
-      hendou_1.value = calc_hendou(Number(before_price_1.value), Number(after_price_1.value));
-      toraku_1.value = calc_toraku(Number(before_price_1.value), Number(after_price_1.value));
-      hendou_2.value = calc_hendou(Number(before_price_2.value), Number(after_price_2.value));
-      toraku_2.value = calc_toraku(Number(before_price_2.value), Number(after_price_2.value));
-      hendou_3.value = calc_hendou(Number(before_price_3.value), Number(after_price_3.value));
-      toraku_3.value = calc_toraku(Number(before_price_3.value), Number(after_price_3.value));
-      hendou_4.value = calc_hendou(Number(before_price_4.value), Number(after_price_4.value));
-      toraku_4.value = calc_toraku(Number(before_price_4.value), Number(after_price_4.value));
-      hendou_5.value = calc_hendou(Number(before_price_5.value), Number(after_price_5.value));
-      toraku_5.value = calc_toraku(Number(before_price_5.value), Number(after_price_5.value));
-    ">
+  <form onsubmit="return false;" oninput="
+    hendou_1.value = calc_hendou(Number(before_price_1.value), Number(after_price_1.value));
+    toraku_1.value = calc_toraku(Number(before_price_1.value), Number(after_price_1.value));
+    hendou_2.value = calc_hendou(Number(before_price_2.value), Number(after_price_2.value));
+    toraku_2.value = calc_toraku(Number(before_price_2.value), Number(after_price_2.value));
+    hendou_3.value = calc_hendou(Number(before_price_3.value), Number(after_price_3.value));
+    toraku_3.value = calc_toraku(Number(before_price_3.value), Number(after_price_3.value));
+    hendou_4.value = calc_hendou(Number(before_price_4.value), Number(after_price_4.value));
+    toraku_4.value = calc_toraku(Number(before_price_4.value), Number(after_price_4.value));
+    hendou_5.value = calc_hendou(Number(before_price_5.value), Number(after_price_5.value));
+    toraku_5.value = calc_toraku(Number(before_price_5.value), Number(after_price_5.value));
+  ">
+    <div class="table-responsive">
       <table class="table table-striped table-bordered align-middle col156-align">
         <thead>
           <tr class="text-center text-nowrap">
@@ -85,8 +85,8 @@
           </tr>
         </tbody>
       </table>
-    </form>
-  </div><!-- table-responsive -->
+    </div><!-- table-responsive -->
+  </form>
   <script>
     function calc_hendou(a, b) {
       return Math.round((b - a) * 100) / 100;
