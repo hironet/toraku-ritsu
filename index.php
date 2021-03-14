@@ -33,7 +33,7 @@ $calc_num = $calc_num < CALC_NUM_MIN ? CALC_NUM_MIN : $calc_num;
       </div>
       <div>
         <div class="input-group">
-          <input type="text" class="form-control" name="calc-num" placeholder="行数を入力して下さい" aria-describedby="calc-num-btn">
+          <input class="form-control" name="calc-num" type="number" placeholder="行数を入力して下さい" aria-describedby="calc-num-btn">
           <button id="calc-num-btn" class="btn btn-outline-primary" type="submit">変更</button>
         </div>
       </div>
