@@ -58,16 +58,16 @@ $calc_num = $calc_num < CALC_NUM_MIN ? CALC_NUM_MIN : $calc_num;
               <input class="form-control" type="text">
             </td>
             <td>
-              <input id="before_price_<?= $i ?>" class="form-control" type="number">
+              <input id="before-price-<?= $i ?>" class="form-control" type="number">
             </td>
             <td>
-              <input id="after_price_<?= $i ?>" class="form-control" type="number">
+              <input id="after-price-<?= $i ?>" class="form-control" type="number">
             </td>
             <td>
-              <output id="hendou_<?= $i ?>"></output>
+              <output id="hendou-<?= $i ?>"></output>
             </td>
             <td>
-              <output id="toraku_<?= $i ?>" class="toraku"></output>
+              <output id="toraku-<?= $i ?>" class="toraku"></output>
             </td>
           </tr>
 <?php } ?>
@@ -89,11 +89,11 @@ $calc_num = $calc_num < CALC_NUM_MIN ? CALC_NUM_MIN : $calc_num;
       let after_price;
       document.getElementById('calc-form').addEventListener('input', function(e) {
 <?php for ($i = 1; $i <= $calc_num; $i++) { ?>
-        before_price = Number(document.getElementById('before_price_<?= $i ?>').value);
-        after_price = Number(document.getElementById('after_price_<?= $i ?>').value);
+        before_price = Number(document.getElementById('before-price-<?= $i ?>').value);
+        after_price = Number(document.getElementById('after-price-<?= $i ?>').value);
         if (before_price > 0 && after_price > 0) {
-          document.getElementById('hendou_<?= $i ?>').value = calc_hendou(before_price, after_price);
-          document.getElementById('toraku_<?= $i ?>').value = calc_toraku(before_price, after_price);
+          document.getElementById('hendou-<?= $i ?>').value = calc_hendou(before_price, after_price);
+          document.getElementById('toraku-<?= $i ?>').value = calc_toraku(before_price, after_price);
         }
 <?php } ?>
       });
